@@ -13,8 +13,36 @@
       --line:#d9d9d9;
       --soft:#f6f6f6;
     }
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
-    main{max-width:1100px;margin:0 auto;padding:28px 18px 72px}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.55;
+    }
+
+    /* HERO (CENTERED + BIG) */
+    header.hero{
+      width:100%;
+      padding:28px 18px 0;
+    }
+    header.hero img{
+      display:block;
+      margin:0 auto;                 /* centers it */
+      width:min(640px, 92vw);        /* makes it big but responsive */
+      height:auto;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+    }
+
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:26px 18px 72px;
+    }
+
     h1{font-size:30px;margin:0 0 6px;letter-spacing:.2px}
     .deck{color:var(--muted);margin:0 0 18px}
     h2{font-size:18px;margin:28px 0 10px}
@@ -22,45 +50,32 @@
     p{margin:10px 0}
     ul{margin:10px 0 10px 22px}
     li{margin:6px 0}
-    .rule{height:1px;background:var(--line);margin:18px 0 18px}
+    a{color:#111;text-decoration:underline}
 
-    /* HERO */
-    header.hero{max-width:1100px;margin:0 auto;padding:28px 18px 0}
-    header.hero img{
-      width:100%;
-      max-width:520px;          /* keeps it from feeling stuck left */
-      height:auto;
-      display:block;
-      margin:0 auto;            /* centers the hero image */
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:#fff;
+    .rule{
+      height:1px;
+      background:var(--line);
+      margin:18px 0 18px;
     }
 
-    /* META BOX (FIXED) */
+    /* META BOX (CENTERED + BIG) */
     .meta{
       background:var(--soft);
       border:1px solid var(--line);
-      padding:22px 26px;        /* bigger */
-      margin:26px auto 22px;    /* centered */
       border-radius:12px;
-      max-width:980px;          /* makes the box big */
-      text-align:center;        /* centers text inside */
+      padding:26px 28px;
+      margin:26px auto 22px;         /* centers the box */
+      width:min(1000px, 92vw);       /* makes it wide/big */
     }
     .meta p{margin:10px 0}
     .meta p:first-child{
-      font-size:18px;           /* larger lead text */
+      font-size:18px;
       line-height:1.6;
-      color:var(--ink);
       margin-top:0;
     }
-    .meta .small{
-      font-size:14px;
-      color:var(--muted);
-      margin-bottom:0;
-    }
+    .small{font-size:13px;color:var(--muted)}
+    .meta .small{font-size:14px;margin-bottom:0}
 
-    a{color:#111;text-decoration:underline}
     table{width:100%;border-collapse:collapse;margin-top:14px}
     th,td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
     th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
@@ -68,7 +83,7 @@
     td.name{width:280px}
     td.img{width:150px}
 
-    /* table images only */
+    /* ONLY table images are sized — NOT the hero */
     td.img img{
       width:120px;
       height:auto;
@@ -78,7 +93,6 @@
       background:#fff;
     }
 
-    .small{font-size:13px;color:var(--muted)}
     .nowrap{white-space:nowrap}
   </style>
 </head>
