@@ -37,14 +37,21 @@
 </head>
 
 <body>
-  <header class="hero">
-  <img
-    src="assets/img/the-commercial-male-hero-institutional-male-modeling-1970-2025.jpg"
-    alt="The Commercial Male — institutional male modeling archetypes from 1970 to 2025"
-    loading="eager"
-    decoding="async"
-  />
-</header>
+/* HERO OVERRIDE (prevents global img width=120px from shrinking it) */
+header.hero{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 56px;
+}
+
+header.hero img{
+  width: min(1400px, 96vw) !important;
+  max-width: 96vw !important;
+  height: auto !important;
+  display: block;
+}
+
 
 <main>
 
