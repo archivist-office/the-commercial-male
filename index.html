@@ -20,9 +20,46 @@
     h2{font-size:18px;margin:28px 0 10px}
     h3{font-size:16px;margin:18px 0 8px}
     p{margin:10px 0}
+    ul{margin:10px 0 10px 22px}
+    li{margin:6px 0}
     .rule{height:1px;background:var(--line);margin:18px 0 18px}
-    .meta{background:var(--soft);border:1px solid var(--line);padding:14px 14px;margin:16px 0;border-radius:8px}
-    .meta p{margin:6px 0}
+
+    /* HERO */
+    header.hero{max-width:1100px;margin:0 auto;padding:28px 18px 0}
+    header.hero img{
+      width:100%;
+      max-width:520px;          /* keeps it from feeling stuck left */
+      height:auto;
+      display:block;
+      margin:0 auto;            /* centers the hero image */
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+    }
+
+    /* META BOX (FIXED) */
+    .meta{
+      background:var(--soft);
+      border:1px solid var(--line);
+      padding:22px 26px;        /* bigger */
+      margin:26px auto 22px;    /* centered */
+      border-radius:12px;
+      max-width:980px;          /* makes the box big */
+      text-align:center;        /* centers text inside */
+    }
+    .meta p{margin:10px 0}
+    .meta p:first-child{
+      font-size:18px;           /* larger lead text */
+      line-height:1.6;
+      color:var(--ink);
+      margin-top:0;
+    }
+    .meta .small{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:0;
+    }
+
     a{color:#111;text-decoration:underline}
     table{width:100%;border-collapse:collapse;margin-top:14px}
     th,td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
@@ -30,7 +67,17 @@
     td.rank{width:64px}
     td.name{width:280px}
     td.img{width:150px}
-    img{width:120px;height:auto;display:block;border:1px solid var(--line);border-radius:6px;background:#fff}
+
+    /* table images only */
+    td.img img{
+      width:120px;
+      height:auto;
+      display:block;
+      border:1px solid var(--line);
+      border-radius:6px;
+      background:#fff;
+    }
+
     .small{font-size:13px;color:var(--muted)}
     .nowrap{white-space:nowrap}
   </style>
@@ -48,8 +95,6 @@
 </header>
 
 <main>
-
-  </p>
 
   <div class="meta">
     <p>
