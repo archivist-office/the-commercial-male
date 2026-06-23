@@ -21,7 +21,6 @@
     --border: rgba(0,0,0,0.12);
     --btn-bg: #0a0a0a;
     --btn-fg: #fff;
-    --btn-hover: #333;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -32,7 +31,6 @@
       --border: rgba(255,255,255,0.12);
       --btn-bg: #f0ede8;
       --btn-fg: #0a0a0a;
-      --btn-hover: #ccc;
     }
   }
 
@@ -97,17 +95,13 @@
 
   .headline {
     display: block;
-    font-size: clamp(2rem, 9.5vw, 9rem);
+    font-size: clamp(2rem, 12.5vw, 12rem);
     font-weight: 900;
     letter-spacing: -0.03em;
     text-transform: uppercase;
     color: var(--fg);
     width: 100%;
     white-space: nowrap;
-  }
-
-  .blue {
-    color: #1a5aff;
   }
 
   .sub {
@@ -146,7 +140,7 @@
   </div>
 
   <div class="headline-wrap">
-    <h1 class="headline" aria-label="Uomo Modello">UOMO <span class="blue">MODELLO</span></h1>
+    <h1 class="headline" aria-label="Uomo Modello">UOMO MODELLO</h1>
   </div>
 
   <p class="sub" aria-live="polite">
@@ -161,15 +155,12 @@
 <script>
   function setLang(lang) {
     var isEN = lang === 'en';
-
     document.getElementById('btn-en').classList.toggle('active', isEN);
     document.getElementById('btn-it').classList.toggle('active', !isEN);
     document.getElementById('btn-en').setAttribute('aria-pressed', isEN);
     document.getElementById('btn-it').setAttribute('aria-pressed', !isEN);
-
     document.getElementById('sub-en').classList.toggle('active', isEN);
     document.getElementById('sub-it').classList.toggle('active', !isEN);
-
     document.documentElement.lang = isEN ? 'en' : 'it';
   }
 </script>
