@@ -21,6 +21,7 @@
     --border: rgba(0,0,0,0.12);
     --btn-bg: #0a0a0a;
     --btn-fg: #fff;
+    --card-bg: #f8f8f8;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -31,6 +32,7 @@
       --border: rgba(255,255,255,0.12);
       --btn-bg: #f0ede8;
       --btn-fg: #0a0a0a;
+      --card-bg: #141414;
     }
   }
 
@@ -128,6 +130,147 @@
     opacity: 0.5;
     white-space: nowrap;
   }
+
+  /* ROSTER */
+  .roster {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .roster-heading {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  /* CARD */
+  .card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-photo {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-rank {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--fg);
+    line-height: 1;
+  }
+
+  .card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+
+  .card-score {
+    margin-left: auto;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .card-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .meta-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .card-campaigns {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .card-campaigns strong {
+    color: var(--fg);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.65rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-link {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--fg);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    align-self: flex-start;
+  }
+
+  .card-link:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
+
+  @media (max-width: 600px) {
+    .card { grid-template-columns: 1fr; }
+    .card-photo { width: 100%; height: 260px; }
+    .card-meta { grid-template-columns: repeat(2, 1fr); }
+    .card-top { flex-wrap: wrap; }
+    .card-score { margin-left: 0; }
+  }
 </style>
 </head>
 <body>
@@ -145,12 +288,53 @@
 
   <p class="sub" aria-live="polite">
     <span class="active" id="sub-en">The Definitive Record of Male Modeling &nbsp;·&nbsp; Est. 1998</span>
-  <span id="sub-it">Il Registro Definitivo della Modellistica Maschile &nbsp;·&nbsp; Est. 1998</span>
+    <span id="sub-it">Il Registro Definitivo della Modellistica Maschile &nbsp;·&nbsp; Est. 1998</span>
   </p>
 
   <p class="wordmark">The Commercial Male</p>
 
 </main>
+
+<section class="roster">
+  <p class="roster-heading">The Roster</p>
+
+  <div class="card">
+    <img class="card-photo" src="assets/img/John-Pearson-Male-Model.jpg" alt="John Pearson male model" />
+    <div class="card-body">
+      <div>
+        <div class="card-top">
+          <span class="card-rank">#1</span>
+          <span class="card-name">John Pearson</span>
+          <span class="card-score">9.7</span>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">
+            <label>Nationality</label>
+            <span>English</span>
+          </div>
+          <div class="meta-item">
+            <label>Height</label>
+            <span>6′ 2″</span>
+          </div>
+          <div class="meta-item">
+            <label>Era</label>
+            <span>1986 – Present</span>
+          </div>
+          <div class="meta-item">
+            <label>Agencies</label>
+            <span>Two Management NY · LA</span>
+          </div>
+        </div>
+        <div class="card-campaigns">
+          <strong>Key Campaigns</strong>
+          George Michael Freedom '90 · GQ US (three decades) · AnOther Magazine
+        </div>
+      </div>
+      <a class="card-link" href="https://mrfeelgood.com/" target="_blank" rel="noopener">mrfeelgood.com ↗</a>
+    </div>
+  </div>
+
+</section>
 
 <script>
   function setLang(lang) {
