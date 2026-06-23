@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Uomo Modello – The Commercial Male | Male Model Rankings, History & Icons</title>
+<meta name="description" content="Uomo Modello — the definitive record of male modeling. Rankings, history, iconic faces, and the models who defined an era. From runway to editorial, the complete authority on the male model." />
+<meta name="keywords" content="uomo modello, male model, top male models, male model history, commercial male, male model rankings, iconic male models, fashion model men, men modeling, uomo vogue models" />
+<meta property="og:title" content="Uomo Modello – The Commercial Male" />
+<meta property="og:description" content="The definitive record of male modeling — rankings, history, and the icons who defined an era." />
+<meta property="og:type" content="website" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://thecommercialmale.com/UOMO-Modello" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #fff;
+    --fg: #0a0a0a;
+    --muted: #555;
+    --border: rgba(0,0,0,0.12);
+    --btn-bg: #0a0a0a;
+    --btn-fg: #fff;
+    --btn-hover: #333;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f0ede8;
+      --muted: #999;
+      --border: rgba(255,255,255,0.12);
+      --btn-bg: #f0ede8;
+      --btn-fg: #0a0a0a;
+      --btn-hover: #ccc;
+    }
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  .lang-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .lang-toggle button {
+    background: transparent;
+    border: none;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    text-transform: uppercase;
+  }
+
+  .lang-toggle button.active {
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+  }
+
+  .lang-toggle button:not(.active):hover {
+    color: var(--fg);
+  }
+
+  .headline-wrap {
+    width: 100%;
+    text-align: center;
+    line-height: 0.88;
+  }
+
+  .headline {
+    display: block;
+    font-size: clamp(3rem, 16vw, 14rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--fg);
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .sub {
+    margin-top: 2.5rem;
+    font-size: clamp(0.75rem, 1.8vw, 1rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .sub span { display: none; }
+  .sub span.active { display: inline; }
+
+  .wordmark {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.5;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<main class="hero" role="main">
+
+  <div class="lang-toggle" role="group" aria-label="Language selector">
+    <button class="active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+    <button id="btn-it" onclick="setLang('it')" aria-pressed="false">IT</button>
+  </div>
+
+  <div class="headline-wrap">
+    <h1 class="headline" id="headline" aria-label="Uomo Modello">UOMO MODELLO</h1>
+  </div>
+
+  <p class="sub" aria-live="polite">
+    <span class="active" id="sub-en">The Definitive Record of Male Modeling</span>
+    <span id="sub-it">Il Registro Definitivo della Modellistica Maschile</span>
+  </p>
+
+  <p class="wordmark">The Commercial Male</p>
+
+</main>
+
+<script>
+  function setLang(lang) {
+    var isEN = lang === 'en';
+
+    document.getElementById('btn-en').classList.toggle('active', isEN);
+    document.getElementById('btn-it').classList.toggle('active', !isEN);
+    document.getElementById('btn-en').setAttribute('aria-pressed', isEN);
+    document.getElementById('btn-it').setAttribute('aria-pressed', !isEN);
+
+    document.getElementById('headline').textContent = isEN ? 'UOMO MODELLO' : 'UOMO MODELLO';
+
+    document.getElementById('sub-en').classList.toggle('active', isEN);
+    document.getElementById('sub-it').classList.toggle('active', !isEN);
+
+    document.documentElement.lang = isEN ? 'en' : 'it';
+  }
+</script>
+
+</body>
+</html>
