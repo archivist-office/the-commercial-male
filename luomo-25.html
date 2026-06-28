@@ -139,17 +139,15 @@
 
     /* ── ARCHIVE CONTAINER ── */
     .archive {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 5rem auto;
-      padding: 0 2rem;
+      padding: 0 3rem;
     }
 
     /* ── ENTRY ── */
     .entry {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 3rem;
-      padding: 4rem 0;
+      display: block;
+      padding: 5rem 0;
       border-top: 1px solid var(--rule);
     }
 
@@ -157,11 +155,12 @@
       border-top: none;
     }
 
+    /* ── THREE IMAGE ROW ── */
     .entry-images {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.75rem;
-      align-items: start;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
     }
 
     .entry-image {
@@ -171,7 +170,7 @@
 
     .entry-image img {
       width: 100%;
-      height: 320px;
+      height: 580px;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -179,8 +178,30 @@
     }
 
     .entry-image img.portrait {
-      height: 420px;
+      height: 680px;
       object-position: top center;
+    }
+
+    /* ── SINGLE IMAGE FULL WIDTH ── */
+    .entry-images.single {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .entry-images.single .entry-image:first-child {
+      grid-column: 1 / 3;
+    }
+
+    .entry-images.single .entry-image img {
+      height: 700px;
+    }
+
+    /* ── TEXT BELOW IMAGES ── */
+    .entry-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
     }
 
     /* ── ENTRY META ── */
@@ -188,16 +209,15 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding-top: 0.25rem;
     }
 
     .entry-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.75rem;
+      font-size: 2.5rem;
       font-weight: 400;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--black);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
 
     .entry-dates {
@@ -207,7 +227,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--mid);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .entry-section-label {
@@ -217,8 +237,8 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--mid);
-      margin-bottom: 0.35rem;
-      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      margin-top: 1.25rem;
     }
 
     .entry-section-label:first-of-type {
@@ -227,25 +247,29 @@
 
     .entry-section-value {
       font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1rem;
+      font-size: 1.125rem;
       color: var(--black);
       margin-bottom: 0.1rem;
       line-height: 1.5;
     }
 
     .entry-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--rule);
-      margin: 1.25rem 0;
+      display: none;
     }
 
     .entry-copy {
       font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1rem;
-      line-height: 1.75;
+      font-size: 1.375rem;
+      line-height: 1.8;
       color: #3a3835;
       font-style: italic;
+      padding-top: 0.5rem;
+    }
+
+    .entry-copy-col {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 0.25rem;
     }
 
     /* ── CORRECTION FLAG ── */
@@ -262,20 +286,10 @@
       margin-bottom: 1rem;
     }
 
-    /* ── SINGLE IMAGE FULL WIDTH ── */
-    .entry-images.single {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-    }
-
-    .entry-images.single .entry-image img {
-      height: 560px;
-    }
-
     /* ── PLACEHOLDER IMAGE ── */
     .img-placeholder {
       width: 100%;
-      height: 320px;
+      height: 580px;
       background: var(--off-white);
       border: 1px solid var(--rule);
       display: flex;
@@ -292,7 +306,7 @@
     }
 
     .img-placeholder.portrait {
-      height: 420px;
+      height: 680px;
     }
 
     /* ── FOOTER ── */
@@ -323,16 +337,27 @@
     .footer-links a:hover { opacity: 1; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      .entry {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+    @media (max-width: 900px) {
       .entry-images {
         grid-template-columns: 1fr 1fr;
       }
+      .entry-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .entry-image img { height: 400px; }
+      .entry-image img.portrait { height: 500px; }
+      .img-placeholder { height: 400px; }
+      .img-placeholder.portrait { height: 500px; }
       .nav-links { display: none; }
       .masthead { margin-top: 3rem; }
+      .archive { padding: 0 1.5rem; }
+    }
+
+    @media (max-width: 580px) {
+      .entry-images {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -376,6 +401,7 @@
           <img src="https://thecommercialmale.com/assets/img/Michael-Flinn-Male-Model.jpg" alt="Michael Flinn" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Michael Flinn</h2>
         <p class="entry-dates">American · 1982 – 1993</p>
@@ -386,7 +412,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Wilhelmina Models NY</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Named the most beautiful male model in the world by People Magazine in 1989. Eleven consecutive years as the face of Hugo Boss — a run that has never been matched by any model for any brand at that tier before or since. He was not groomed by an agency system. He was not a product of digital discovery. He walked in with it. You cannot teach what he had. No filter. No algorithm. No comparable.</p>
+      </div>
       </div>
     </article>
 
@@ -403,6 +432,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-003-mark-vanderloo-male-model.jpg" alt="Mark Vanderloo" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Mark Vanderloo</h2>
         <p class="entry-dates">Dutch · 1990 – Present</p>
@@ -413,7 +443,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Wilhelmina NY · Models 1 London</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">The only model in the history of the industry to hold Hugo Boss and Calvin Klein simultaneously. Lindbergh shot him moving through a crowd for DKNY — every other face in the frame blurred into irrelevance. That was not a metaphor. That was just what happened when Vanderloo walked into a room. Ranked #1 on L'Uomo Vogue's Top 25 Male Models Ever. Sustained dominance longer than almost anyone.</p>
+      </div>
       </div>
     </article>
 
@@ -427,6 +460,7 @@
           <img src="https://thecommercialmale.com/assets/img/Marcus-Schenkenberg-Male-Model.jpg" alt="Marcus Schenkenberg" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Marcus Schenkenberg</h2>
         <p class="entry-dates">Swedish · 1990 – Present</p>
@@ -437,7 +471,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Ford Models NY · Soul Artist Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Discovered rollerblading in Venice Beach, California. His six-foot-four frame and signature long hair ignited a global media response that defined the male sex symbol of the 1990s fashion era. Calvin Klein Jeans. Versace. Iceberg. The face that made the nineties believe it had invented masculinity. In person, he stops a room. No filters required.</p>
+      </div>
       </div>
     </article>
 
@@ -454,6 +491,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-013-bruce-hulse-male-model.jpg" alt="Bruce Hulse" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Bruce Hulse</h2>
         <p class="entry-dates">American · 1980s – Present</p>
@@ -464,7 +502,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">LA Models · Major Model Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Discovered by Bruce Weber while working as an ocean lifeguard in Avalon, New Jersey. An Ivy League graduate who became the athletic blueprint for 1980s American menswear. Calvin Klein Underwear. Polo Ralph Lauren. The body that defined what the decade believed a man should look like. His career outlasted the decade that made him famous by thirty years.</p>
+      </div>
       </div>
     </article>
 
@@ -481,6 +522,7 @@
           <img src="https://thecommercialmale.com/assets/img/Jeff-Aquilon-first-ever-male-model.jpeg" alt="Jeff Aquilon — first male supermodel" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Jeff Aquilon</h2>
         <p class="entry-dates">American · 1978 – 1989</p>
@@ -491,7 +533,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Nina Blanchard Agency LA</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Discovered by Bruce Weber while captaining the Pepperdine University water polo team. He did not enter an existing category — he built one from scratch. The term male supermodel was coined around him. Before Jeff Aquilon, there was no template. He was the template. Every model who followed inherited infrastructure he constructed alone in the late 1970s and early 1980s.</p>
+      </div>
       </div>
     </article>
 
@@ -502,6 +547,7 @@
           <img src="https://thecommercialmale.com/assets/img/Tomas-Hintnaus-Calvin-Klein-Ad-1982.jpg" alt="Tomas Hintnaus — Calvin Klein Underwear Times Square Billboard 1982, photograph by Bruce Weber" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <div class="correction-flag">Historical Correction</div>
         <h2 class="entry-name">Tom Hintnaus</h2>
@@ -513,7 +559,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Nina Blanchard Agency LA</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">He doesn't need another picture. This is the one. Shot by Bruce Weber in 1982 for Calvin Klein Underwear — a hundred feet wide across Times Square, New York City. A world-class Olympic pole vaulter from Brazil. Before this image existed, designer men's underwear as a commercial category did not exist. After it, every brand in the world chased the standard for the next four decades. The multi-billion dollar luxury men's underwear industry, every fragrance campaign built on a male body, every billboard that followed — all of it traces its origin to this single frame from 1982. He does not appear on the 2012 L'Uomo Vogue list. He does not appear on the 2014 Vogue list. That is the greatest editorial oversight in the documented history of the industry. It is corrected here, permanently.</p>
+      </div>
       </div>
     </article>
 
@@ -530,6 +579,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-024-ric-arango-male-model.jpg" alt="Ric Arango" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <div class="correction-flag">Historical Correction</div>
         <h2 class="entry-name">Ric Arango</h2>
@@ -541,7 +591,10 @@
         <p class="entry-section-label">Location</p>
         <p class="entry-section-value">Montecito, CA · New York · Milan</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">1989. Calvin Klein Obsession for Men, photographed by Bruce Weber at an estate in Montecito, California. Gianni Versace, also Weber, the same year. Two of the most significant campaigns in the history of fragrance and fashion advertising, one model, one photographer, one year. Weber later exhibited the Arango Point Conception series as fine art photography — not a catalog credit, a cultural artifact. What his poster did to the world of fragrance advertising is what the Hintnaus billboard did to underwear. He does not appear on either published list. That ends here.</p>
+      </div>
       </div>
     </article>
 
@@ -558,6 +611,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-021-cameron-alborzian-male-model.jpg" alt="Cameron Alborzian" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Cameron Alborzian</h2>
         <p class="entry-dates">Iranian-British · 1986 – 2005</p>
@@ -568,7 +622,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Select Model Management London</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">One of the most striking profiles in the history of the industry. His Iranian and British heritage produced a face that the camera did not know how to categorize, and that impossibility was the entire point. He crossed into mainstream pop culture — Madonna's Express Yourself, George Michael's Freedom — then walked away from high fashion entirely to master ancient Ayurvedic healing. Very few careers that end that way deserve more respect.</p>
+      </div>
       </div>
     </article>
 
@@ -585,6 +642,7 @@
           <img src="https://thecommercialmale.com/assets/img/Brett-salisbury-and-michael-bergin-photo-by-Bob-Klein.jpg" alt="Michael Bergin and Brett Salisbury — Bill Blass 1997, photograph by Bob Klein" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Michael Bergin</h2>
         <p class="entry-dates">American · 1994 – 2004</p>
@@ -593,7 +651,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Wilhelmina · NY Model Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Calvin Klein Underwear and Calvin Klein Jeans simultaneously — a level of institutional trust from a single designer that very few male models in history have earned. Photographed backstage at the Bill Blass New York show in 1997 alongside Brett Salisbury — two of the most recognizable commercial male faces of the era, captured in a rare unguarded moment before the lights came up. His career required no explanation to anyone who saw a New York City bus shelter between 1994 and 2000.</p>
+      </div>
       </div>
     </article>
 
@@ -610,6 +671,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-025-alex-lundqvist-male-model.jpg" alt="Alex Lundqvist" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Alex Lundqvist</h2>
         <p class="entry-dates">Swedish · 1994 – Present</p>
@@ -620,7 +682,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Wilhelmina NY · Ford Models NY</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Handpicked by Bruce Weber after being spotted in an obscure publication. He dominated the nineties as a true male supermodel and MTV House of Style fixture. His close friendship with Mark Vanderloo during the apex of both their careers produced two of the most institutionally validated faces the decade built — running parallel at the highest tier without competing, because the market was big enough for both of them.</p>
+      </div>
       </div>
     </article>
 
@@ -637,6 +702,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-007-tyson-beckford-male-model.jpg" alt="Tyson Beckford" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Tyson Beckford</h2>
         <p class="entry-dates">American · 1993 – Present</p>
@@ -647,7 +713,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Soul Artist Management · D'Management Milan</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Vogue named him the greatest male model of all time in their 2014 ranking. The case is not difficult to make. The defining face of Ralph Lauren's menswear empire across the 1990s, he shattered racial barriers in luxury fashion at a moment when those barriers were still very much intact. His crossover into mainstream culture did not dilute the modeling career — it amplified it. Ralph Lauren built an era around him.</p>
+      </div>
       </div>
     </article>
 
@@ -664,6 +733,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-005-sean-opry-male-model.jpg" alt="Sean O'Pry" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Sean O'Pry</h2>
         <p class="entry-dates">American · 2006 – Present</p>
@@ -672,7 +742,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">VNY Model Management NY</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Discovered from MySpace prom photographs at age seventeen in Kennesaw, Georgia. His hunter eyes and facial symmetry became the most commercially replicated look of the digital era. Forbes named him the highest-paid male model in history. Guinness confirmed it. The career that followed — Calvin Klein, Armani, a decade at the top of Models.com — is legitimate on its own terms, regardless of how it began. Longevity is the argument. He has made it.</p>
+      </div>
       </div>
     </article>
 
@@ -689,6 +762,7 @@
           <img src="https://thecommercialmale.com/assets/img/Brett-Salisbury-Axios-Man-1997-Campaign.jpg" alt="Brett Salisbury — Axios Man by Nexxus 1997, photograph by Richard Avedon" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Brett Salisbury</h2>
         <p class="entry-dates">American · 1994 – 1998</p>
@@ -699,7 +773,10 @@
         <p class="entry-section-label">Agencies</p>
         <p class="entry-section-value">Modelplan Milan · Paparazzi Helsinki · Elite Atlanta</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">From September 1994 to August 1998, Brett Salisbury completed more than 500 print and runway jobs across Helsinki, Milan, and Los Angeles. No model in the documented history of the industry has matched that volume at that commercial tier in that compressed a timeframe. It has never been done since. He was part of the elite eight-man group known as Made in Italy — the most sought-after commercial male faces operating simultaneously out of Milan at the peak of the industry. He signed with Modelplan Milan — an agency of 82 men that included Marcus Schenkenberg — and became number 82 on that roster. Photographed by Maurizio Montani in September 1995, the image that launched his international career. Photographed by Richard Avedon in Los Angeles in 1997 as the global face of Axios Man by Nexxus — one of the most significant commercial male grooming campaigns in the world that year. A former college quarterback. Finland's Sexiest Male. Ranked #15 on L'Uomo Vogue's Top 25 Male Models Ever. The dual-career record has no parallel in the history of the industry.</p>
+      </div>
       </div>
     </article>
 
@@ -716,6 +793,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-027-hoyt-richards-male-model.jpg" alt="Hoyt Richards" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Hoyt Richards</h2>
         <p class="entry-dates">American · 1980s – 1990s</p>
@@ -726,7 +804,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Ford Models</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Bruce Weber's defining male muse and the world's highest-paid male model of his era. The Polo Ralph Lauren campaigns he anchored set the visual standard for American menswear through an entire decade. His relationship with Weber produced some of the most reproduced male fashion imagery of the twentieth century. The face that made preppy feel inevitable.</p>
+      </div>
       </div>
     </article>
 
@@ -743,6 +824,7 @@
           <img src="https://thecommercialmale.com/assets/img/Gandy-male-model.jpg" alt="David Gandy" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">David Gandy</h2>
         <p class="entry-dates">British · 2001 – Present</p>
@@ -753,7 +835,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Select Model Management · Ford Models NY</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">In 2012 when L'Uomo Vogue published their list, Gandy had been the face of D&G Light Blue for six years. The full measure of what he would become had not yet landed. It has since. He single-handedly shifted the modeling paradigm of the mid-2000s — replacing the androgynous male ideal with a muscular, hyper-masculine physicality that redefined what luxury brands believed men should look like. The most institutionally dominant commercial male model of the modern era. The culmination of everything the system built toward across five decades.</p>
+      </div>
       </div>
     </article>
 
@@ -770,6 +855,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-010-jon-kortajarena-male-model.jpg" alt="Jon Kortajarena" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Jon Kortajarena</h2>
         <p class="entry-dates">Spanish · 2003 – Present</p>
@@ -778,7 +864,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">The Lions NY · Select London</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Tom Ford chose him above every male model alive when he needed a face for his own house. That is the complete argument. Discovered at eighteen in Barcelona, Kortajarena built a career across the highest tier of European luxury before pivoting to Hollywood with his role in A Single Man. Forbes ranked him the eighth most influential male model in 2009. Models.com placed him fourth overall in 2017. Spain has never produced a more significant modeling export.</p>
+      </div>
       </div>
     </article>
 
@@ -795,6 +884,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-012-noah-mills-male-model.jpg" alt="Noah Mills" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Noah Mills</h2>
         <p class="entry-dates">Canadian · 2003 – Present</p>
@@ -805,7 +895,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">IMG Models · Success Models Paris</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Named to Vogue's Top 10 Male Models of All Time in 2014. The Dolce & Gabbana Pour Homme fragrance campaign alone — shot by Mario Testino — would place him in any serious discussion of the era's defining commercial male faces. He carries the kind of weight that the camera registers before a photographer has issued a single direction. Not a product of social media. Not a product of crossover celebrity. A model.</p>
+      </div>
       </div>
     </article>
 
@@ -822,6 +915,7 @@
           <span>Image · Pending</span>
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Brad Kroenig</h2>
         <p class="entry-dates">American · 2002 – Present</p>
@@ -832,7 +926,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">VNY Model Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Karl Lagerfeld chose him above every male model in the world to be the face of Chanel for over a decade. Then Lagerfeld named Kroenig's son Hudson his godfather. That is not a professional relationship. That is a creative partnership of the rarest kind — the kind a designer offers once, to one person, in a lifetime of work. His place on this list requires no further argument than the name of the house he represented and the man who chose him.</p>
+      </div>
       </div>
     </article>
 
@@ -849,6 +946,7 @@
           <span>Image · Pending</span>
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Mathias Lauridsen</h2>
         <p class="entry-dates">Danish · 2003 – Present</p>
@@ -857,7 +955,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">IMG Models NY · Scoop Models Copenhagen</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Every agency he ever met told him the scar on his left cheek would end his career before it started. He held the global number one position on Models.com for two consecutive years. Gucci Pour Homme and Dior Homme simultaneously — two of the most coveted fragrance and fashion accounts in the world — while the scar the industry told him was a liability became the most recognizable mark on his face. There is no better story in twenty-first century male modeling.</p>
+      </div>
       </div>
     </article>
 
@@ -874,6 +975,7 @@
           <img src="https://thecommercialmale.com/assets/img/John-Pearson-1990-Perry-Ellis.jpg" alt="John Pearson — Perry Ellis 1990" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">John Pearson</h2>
         <p class="entry-dates">English · 1986 – Present</p>
@@ -882,7 +984,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Two Management NY · LA</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">The only male model to appear in GQ US across three consecutive decades. The George Michael Freedom '90 video — alongside Naomi Campbell, Linda Evangelista, Christy Turlington, Cindy Crawford — remains the single most culturally significant piece of fashion film ever made. His presence in that frame, at that moment, alongside those women, is a permanent part of the photographic record of the twentieth century.</p>
+      </div>
       </div>
     </article>
 
@@ -899,6 +1004,7 @@
           <img src="https://thecommercialmale.com/assets/img/Tony-Ward-male-supermodel-10-magazine.jpg" alt="Tony Ward — 10 Magazine" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Tony Ward</h2>
         <p class="entry-dates">American · 1981 – Present</p>
@@ -907,7 +1013,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Major Model NY · Models1 London</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">Raw. Unedited. Chameleon. Ten different men in one face. His tattooed, unpredictable physicality permanently redefined male sex appeal in a direction that no one had mapped before him. Music video partnerships with Madonna and George Michael made him a pop culture fixture, but the modeling career required no crossover to validate it. Of every man on this list, he may have had the most natural presence in a room. Possibly the most of all.</p>
+      </div>
       </div>
     </article>
 
@@ -924,6 +1033,7 @@
           <span>Image · Pending</span>
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Baptiste Giabiconi</h2>
         <p class="entry-dates">French · 2008 – Present</p>
@@ -932,7 +1042,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Soul Artist Management · Sight Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">He was working as a mechanic in a helicopter factory outside Marseille when Karl Lagerfeld found him. Two years at the global number one position on Models.com — a record matched by almost no one. Lagerfeld's permanent creative muse across a decade of Chanel — not a season, not a campaign, a decade. The relationship was singular in the history of the industry: a designer of Lagerfeld's stature does not attach himself to one face for that long unless the face is doing something no other face can do. Giabiconi was doing exactly that.</p>
+      </div>
       </div>
     </article>
 
@@ -949,6 +1062,7 @@
           <img src="https://thecommercialmale.com/assets/img/mmi-009-alton-mason-male-model.jpg" alt="Alton Mason" class="portrait" />
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Alton Mason</h2>
         <p class="entry-dates">American · 2016 – Present</p>
@@ -957,7 +1071,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">IMG Models · Elite Model Management</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">A trained dancer before he was a model — and it shows in every frame. The first Black male model to walk a Chanel runway. Five consecutive Models.com Model of the Year titles — a record that has never been matched in the history of the award. Gucci. Louis Vuitton under Virgil Abloh. The institutional validation is complete and permanent. His presence on this list is not a gesture toward the modern era. It is a recognition that the modern era produced at least one man whose career belongs in any serious historical record of the industry at its highest level.</p>
+      </div>
       </div>
     </article>
 
@@ -974,6 +1091,7 @@
           <span>Image · Pending</span>
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Tyson Ballou</h2>
         <p class="entry-dates">American · 2000s – Present</p>
@@ -982,7 +1100,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">IMG Models · Wilhelmina NY</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">The kind of face that high-fashion houses return to because the camera continues to find something new in it regardless of how many times it has been shot. Versace. Cavalli. Calvin Klein. Dolce & Gabbana. The roster of designers who placed him in their campaigns is the argument. Named to L'Uomo Vogue's original Top 25 Male Models Ever list and confirmed here on the basis of a career that earned it without the assistance of any platform, any algorithm, or any cultural moment beyond the work itself.</p>
+      </div>
       </div>
     </article>
 
@@ -999,6 +1120,7 @@
           <span>Image · Pending</span>
         </div>
       </div>
+      <div class="entry-body">
       <div class="entry-meta">
         <h2 class="entry-name">Werner Schreyer</h2>
         <p class="entry-dates">Austrian · 1988 – Present</p>
@@ -1009,7 +1131,10 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Select London · Success Paris · DNA New York · Metro Models Zurich</p>
         <div class="entry-divider"></div>
+              </div>
+      <div class="entry-copy-col">
         <p class="entry-copy">The industry called him the James Dean of fashion. It was not a compliment they gave casually and it was not one he asked for. Born in Vienna in 1970, he spent thirteen years in Paris building one of the most quietly dominant careers in the history of the industry. Hugo Boss came and his agency told him to take it. He did. Hugo became an icon and so did he. From there — Versace, Armani, Guess, Calvin Klein, Gucci, Dolce & Gabbana. Mario Testino found him early in London. Herb Ritts. Bruce Weber. Juergen Teller. Alasdair McLellan shot him for Louis Vuitton with Kim Jones in 2011 — two of his best campaigns ever by his own account. The only male model in history to appear on the cover of French Vogue. Still working. Still carrying the same authority he had when the industry was building itself around faces like his. Four decades. No algorithm required. No platform required. Just the face and what it does when a camera finds it.</p>
+      </div>
       </div>
     </article>
 
