@@ -139,7 +139,7 @@
 
     /* ── ARCHIVE CONTAINER ── */
     .archive {
-      max-width: 880px;
+      max-width: 1100px;
       margin: 5rem auto;
       padding: 0 2rem;
     }
@@ -147,8 +147,8 @@
     /* ── ENTRY ── */
     .entry {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
       padding: 4rem 0;
       border-top: 1px solid var(--rule);
     }
@@ -158,9 +158,10 @@
     }
 
     .entry-images {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      align-items: start;
     }
 
     .entry-image {
@@ -170,7 +171,7 @@
 
     .entry-image img {
       width: 100%;
-      height: 340px;
+      height: 320px;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -178,7 +179,7 @@
     }
 
     .entry-image img.portrait {
-      height: 440px;
+      height: 420px;
       object-position: top center;
     }
 
@@ -261,10 +262,20 @@
       margin-bottom: 1rem;
     }
 
+    /* ── SINGLE IMAGE FULL WIDTH ── */
+    .entry-images.single {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+
+    .entry-images.single .entry-image img {
+      height: 560px;
+    }
+
     /* ── PLACEHOLDER IMAGE ── */
     .img-placeholder {
       width: 100%;
-      height: 340px;
+      height: 320px;
       background: var(--off-white);
       border: 1px solid var(--rule);
       display: flex;
@@ -281,7 +292,7 @@
     }
 
     .img-placeholder.portrait {
-      height: 440px;
+      height: 420px;
     }
 
     /* ── FOOTER ── */
@@ -317,6 +328,9 @@
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+      .entry-images {
+        grid-template-columns: 1fr 1fr;
+      }
       .nav-links { display: none; }
       .masthead { margin-top: 3rem; }
     }
@@ -341,7 +355,7 @@
     <h1>The Greatest 25</h1>
     <p class="masthead-dedication">In Honor of L'Uomo Vogue · 1967–2021</p>
     <div class="masthead-rule"></div>
-    <p class="masthead-intro">L'Uomo Vogue published its list of the Top 25 Male Models Ever in August 2012. It was the most significant editorial statement the magazine ever made about the men who built its pages. It was also incomplete. Not because the editors were wrong — they weren't, mostly — but because the full record requires distance, and 2012 was still too close to see everything clearly.</p>
+    <p class="masthead-intro">L'Uomo Vogue published its list of the <a href="https://web.archive.org/web/20130630000757/http://shine.yahoo.com/beauty/vogue-magazine-names-top-25-male-models-ever-104000311.html" target="_blank" rel="noopener" style="color:var(--black);text-decoration:underline;text-underline-offset:3px;">Top 25 Male Models Ever in August 2012</a>. It was the most significant editorial statement the magazine ever made about the men who built its pages. It was also incomplete. Not because the editors were wrong — they weren't, mostly — but because the full record requires distance, and 2012 was still too close to see everything clearly.</p>
     <p class="masthead-intro" style="margin-top:1.25rem;">What follows is the complete record. Twenty-five men. No rankings. No numbers. The order means nothing. The names mean everything. Two men appear here who appeared on no published list. Their absence was the greatest editorial oversight in the documented history of the industry. It is corrected here, permanently.</p>
     <p class="masthead-intro" style="margin-top:1.25rem; margin-bottom:3rem;">This page was compiled using the Male Model Index, the UOMO Modello Power Rankings, the Gigi Sozzani Campaign Archive, and forty years of documented commercial male modeling history.</p>
   </header>
@@ -353,10 +367,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Michael-Flinn-Hugo-Boss-1988.jpg" alt="Michael Flinn — Hugo Boss 1988, photograph by Bob Krieger" />
+          <img src="https://thecommercialmale.com/assets/img/Michael-Flinn-Hugo-Boss-1988.jpg" alt="Michael Flinn — Hugo Boss 1988, photograph by Bob Krieger" class="portrait" />
         </div>
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Hugo-Boss-Male-Model-Michael-Flinn.jpg" alt="Michael Flinn — Hugo Boss 1990, photograph by Bob Krieger" />
+          <img src="https://thecommercialmale.com/assets/img/Hugo-Boss-Male-Model-Michael-Flinn.jpg" alt="Michael Flinn — Hugo Boss 1990, photograph by Bob Krieger" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Michael-Flinn-Male-Model.jpg" alt="Michael Flinn" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -377,10 +394,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Mark-Vanderloo-Male-Model.jpg" alt="Mark Vanderloo — DKNY 1994–1996, photograph by Peter Lindbergh" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/Mark-Vanderloo-Male-Model.jpg" alt="Mark Vanderloo" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Mark-Vanderloo-top-25-male-models-ever.jpg" alt="Mark Vanderloo — L'Uomo Vogue Top 25" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-003-mark-vanderloo-male-model.jpg" alt="Mark Vanderloo" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -427,8 +447,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Bruce-Hulse-Male-Model.jpg" alt="Bruce Hulse" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Bruce-Hulse-1983.jpg" alt="Bruce Hulse 1983" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-013-bruce-hulse-male-model.jpg" alt="Bruce Hulse" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -454,6 +477,9 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Jeff-Aquilon-Male-Model.jpg" alt="Jeff Aquilon" class="portrait" />
         </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Jeff-Aquilon-first-ever-male-model.jpeg" alt="Jeff Aquilon — first male supermodel" class="portrait" />
+        </div>
       </div>
       <div class="entry-meta">
         <h2 class="entry-name">Jeff Aquilon</h2>
@@ -471,12 +497,9 @@
 
     <!-- 06 TOM HINTNAUS -->
     <article class="entry">
-      <div class="entry-images">
+      <div class="entry-images single">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Tomas-Valdemar-Hintnaus-Male-Model.jpg" alt="Tomas Hintnaus — Calvin Klein Underwear 1982" class="portrait" />
-        </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+          <img src="https://thecommercialmale.com/assets/img/Tomas-Hintnaus-Calvin-Klein-Ad-1982.jpg" alt="Tomas Hintnaus — Calvin Klein Underwear Times Square Billboard 1982, photograph by Bruce Weber" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -490,7 +513,7 @@
         <p class="entry-section-label">Agency</p>
         <p class="entry-section-value">Nina Blanchard Agency LA</p>
         <div class="entry-divider"></div>
-        <p class="entry-copy">A world-class Olympic pole vaulter. One photograph by Bruce Weber. One hundred feet of Times Square. 1982. Before that image existed, designer men's underwear as a commercial category did not exist. After it, every brand chased the standard for four decades. The multi-billion dollar luxury men's underwear industry — every campaign that followed, every billboard, every fragrance advertisement built on a male body — traces its origin to this single frame. He does not appear on either the 2012 L'Uomo Vogue list or the 2014 Vogue list. That is the greatest editorial oversight in the documented history of the industry. It is corrected here.</p>
+        <p class="entry-copy">He doesn't need another picture. This is the one. Shot by Bruce Weber in 1982 for Calvin Klein Underwear — a hundred feet wide across Times Square, New York City. A world-class Olympic pole vaulter from Brazil. Before this image existed, designer men's underwear as a commercial category did not exist. After it, every brand in the world chased the standard for the next four decades. The multi-billion dollar luxury men's underwear industry, every fragrance campaign built on a male body, every billboard that followed — all of it traces its origin to this single frame from 1982. He does not appear on the 2012 L'Uomo Vogue list. He does not appear on the 2014 Vogue list. That is the greatest editorial oversight in the documented history of the industry. It is corrected here, permanently.</p>
       </div>
     </article>
 
@@ -501,7 +524,10 @@
           <img src="https://thecommercialmale.com/assets/img/ric-arango-calvin-klein-obsession-for-men-campaign.jpg" alt="Ric Arango — Calvin Klein Obsession for Men 1989, photograph by Bruce Weber" class="portrait" />
         </div>
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Deryl-George-Ric-Arango-Versace-1989.jpg" alt="Ric Arango — Gianni Versace 1989, photograph by Bruce Weber" />
+          <img src="https://thecommercialmale.com/assets/img/Deryl-George-Ric-Arango-Versace-1989.jpg" alt="Ric Arango — Gianni Versace 1989, photograph by Bruce Weber" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-024-ric-arango-male-model.jpg" alt="Ric Arango" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -525,8 +551,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Cameron-Alborzian-Male-Model.jpg" alt="Cameron Alborzian" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Cameron-Alborzian-photgraphed-by-Francois-Matthys.jpg" alt="Cameron Alborzian — photographed by Francois Matthys" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-021-cameron-alborzian-male-model.jpg" alt="Cameron Alborzian" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -549,8 +578,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Michael-Bergin-Male-Model.jpg" alt="Michael Bergin" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Michael-Bergin-Billboard-Calvin-Klein-NY.jpg" alt="Michael Bergin — Calvin Klein Billboard New York" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Brett-salisbury-and-michael-bergin-photo-by-Bob-Klein.jpg" alt="Michael Bergin and Brett Salisbury — Bill Blass 1997, photograph by Bob Klein" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -571,8 +603,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Alex-Lundqvist-Male-Model.jpg" alt="Alex Lundqvist" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Alex-Lundqvist-Hugo-Boss.jpg" alt="Alex Lundqvist — Hugo Boss" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-025-alex-lundqvist-male-model.jpg" alt="Alex Lundqvist" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -593,10 +628,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Polo-Ralph-Lauren-1997-Campaign-Tyson-Beckford.jpg" alt="Tyson Beckford — Polo Ralph Lauren Underwear 1997, photograph by Bruce Weber" />
+          <img src="https://thecommercialmale.com/assets/img/Polo-Ralph-Lauren-1997-Campaign-Tyson-Beckford.jpg" alt="Tyson Beckford — Polo Ralph Lauren Underwear 1997, photograph by Bruce Weber" class="portrait" />
         </div>
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Tyson-Beckford-Male-Model.jpg" alt="Tyson Beckford" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-007-tyson-beckford-male-model.jpg" alt="Tyson Beckford" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -619,8 +657,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Sean-O_Pry-Male-Model.jpg" alt="Sean O'Pry" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Sean-Opry-male-model-thailand.jpg" alt="Sean O'Pry" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-005-sean-opry-male-model.jpg" alt="Sean O'Pry" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -639,10 +680,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Brett-Salisbury-Axios-Man-1997-Campaign.jpg" alt="Brett Salisbury — Axios Man by Nexxus 1997, photograph by Richard Avedon" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/Brett-Salisbury-photographed-by-Maurizio-Montani-milan.jpg" alt="Brett Salisbury — Maurizio Montani, Milan 1995" class="portrait" />
         </div>
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Brett-Salisbury-Male-Model.jpeg" alt="Brett Salisbury — Maurizio Montani, Milan 1995" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/brett-salisbury-global-commercial-campaign.jpg" alt="Brett Salisbury — Nokia Global Campaign" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Brett-Salisbury-Axios-Man-1997-Campaign.jpg" alt="Brett Salisbury — Axios Man by Nexxus 1997, photograph by Richard Avedon" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -665,8 +709,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Hoyt-Richards-Male-Model.jpg" alt="Hoyt Richards" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Hoyt-Richards-Polo-Ralph-Lauren.jpg" alt="Hoyt Richards — Polo Ralph Lauren" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-027-hoyt-richards-male-model.jpg" alt="Hoyt Richards" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -687,10 +734,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/David-Gandy-2001-male-model.jpg" alt="David Gandy — editorial 2018, photograph by Gustavo López" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/David-Gandy-Male-Model.jpg" alt="David Gandy" class="portrait" />
         </div>
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/David-Gandy-Male-Model.jpg" alt="David Gandy" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/David-Gandy-Men-Style.jpg" alt="David Gandy" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Gandy-male-model.jpg" alt="David Gandy" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -713,8 +763,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Jon-Kortajarena-Model-Model.jpg" alt="Jon Kortajarena" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Jon-Kortajarena-Ford.jpeg" alt="Jon Kortajarena — Ford Models" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-010-jon-kortajarena-male-model.jpg" alt="Jon Kortajarena" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -733,10 +786,13 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Noah-Mills-Male-Model.jpg" alt="Noah Mills" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/Noah-Mills-2011-male-model.jpg" alt="Noah Mills 2011" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Noah-Mills.jpeg" alt="Noah Mills" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-012-noah-mills-male-model.jpg" alt="Noah Mills" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -757,7 +813,10 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Brad-Kroenig-Male-Model.jpg" alt="Brad Kroenig — Chanel" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/mmi-034-brad-kroenig-male-model.jpg" alt="Brad Kroenig — Chanel" class="portrait" />
+        </div>
+        <div class="img-placeholder portrait">
+          <span>Image · Pending</span>
         </div>
         <div class="img-placeholder portrait">
           <span>Image · Pending</span>
@@ -783,6 +842,9 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Mathias-Lauridsen-Male-Model.jpg" alt="Mathias Lauridsen" class="portrait" />
         </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-035-mathias-lauridsen-male-model.jpg" alt="Mathias Lauridsen" class="portrait" />
+        </div>
         <div class="img-placeholder portrait">
           <span>Image · Pending</span>
         </div>
@@ -805,8 +867,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/John-Pearson-Male-Model.jpg" alt="John Pearson" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/John-Pearson-Vogue-Magazine-male-super-model.jpeg" alt="John Pearson — Vogue Magazine" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/John-Pearson-1990-Perry-Ellis.jpg" alt="John Pearson — Perry Ellis 1990" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -827,8 +892,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Tony-Ward-Male-Model.jpg" alt="Tony Ward" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Tony-Ward-Icon.jpg" alt="Tony Ward" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Tony-Ward-male-supermodel-10-magazine.jpg" alt="Tony Ward — 10 Magazine" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -848,6 +916,9 @@
       <div class="entry-images">
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Baptiste-Giabiconi-Male-Model.jpg" alt="Baptiste Giabiconi — Chanel" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-039-baptiste-giabiconi-male-model.jpg" alt="Baptiste Giabiconi" class="portrait" />
         </div>
         <div class="img-placeholder portrait">
           <span>Image · Pending</span>
@@ -871,8 +942,11 @@
         <div class="entry-image">
           <img src="https://thecommercialmale.com/assets/img/Alton-Mason-Male-Model.jpg" alt="Alton Mason" class="portrait" />
         </div>
-        <div class="img-placeholder portrait">
-          <span>Image · Pending</span>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/Alton-Mason-Supermodel.jpg" alt="Alton Mason" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-009-alton-mason-male-model.jpg" alt="Alton Mason" class="portrait" />
         </div>
       </div>
       <div class="entry-meta">
@@ -891,7 +965,10 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Tyson-Ballou-Male-Model.jpg" alt="Tyson Ballou" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/Tyson-Ballou-rooftop-Details-magazine.jpeg" alt="Tyson Ballou — Details Magazine" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-008-tyson-ballou-male-model.jpg" alt="Tyson Ballou" class="portrait" />
         </div>
         <div class="img-placeholder portrait">
           <span>Image · Pending</span>
@@ -913,7 +990,10 @@
     <article class="entry">
       <div class="entry-images">
         <div class="entry-image">
-          <img src="https://thecommercialmale.com/assets/img/Werner-Schreyer-Male-Model.jpg" alt="Werner Schreyer" class="portrait" />
+          <img src="https://thecommercialmale.com/assets/img/Werner-Schreyer.jpg" alt="Werner Schreyer" class="portrait" />
+        </div>
+        <div class="entry-image">
+          <img src="https://thecommercialmale.com/assets/img/mmi-015-werner-schreyer-male-model.jpg" alt="Werner Schreyer" class="portrait" />
         </div>
         <div class="img-placeholder portrait">
           <span>Image · Pending</span>
