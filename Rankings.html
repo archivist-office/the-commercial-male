@@ -129,6 +129,14 @@
     color: var(--gold);
     margin-bottom: 10px;
   }
+  .wcard .src a.srclink {
+    color: var(--gold);
+    border-bottom: 1px solid transparent;
+  }
+  .wcard .src a.srclink:hover {
+    color: var(--cherry);
+    border-bottom: 1px solid var(--cherry);
+  }
   .wcard p {
     font-size: 0.88rem;
     color: var(--paper-dim);
@@ -191,6 +199,20 @@
     white-space: nowrap;
   }
   thead th.numhead { text-align: center; }
+  thead th.numhead .rn {
+    display: block;
+    color: var(--cherry);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+  thead th.numhead .abbr {
+    display: block;
+    color: var(--gold);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    margin-top: 3px;
+    font-weight: 500;
+  }
   tbody td {
     padding: 9px 10px;
     border-bottom: 1px solid var(--line);
@@ -303,7 +325,7 @@
       <div class="wcard">
         <div class="num">I</div>
         <h3>The Original</h3>
-        <div class="src">L&rsquo;Uomo Vogue &middot; 1972&ndash;2012</div>
+        <div class="src"><a class="srclink" href="https://web.archive.org/web/20130630000757/http://shine.yahoo.com/beauty/vogue-magazine-names-top-25-male-models-ever-104000311.html" target="_blank" rel="noopener">L&rsquo;Uomo Vogue &middot; 1972&ndash;2012 &#8599;</a></div>
         <p>The print foundation. Published August 2012, twenty-five names ranked one through twenty-five with full editorial commentary on each. Every later system on this page either builds on it or breaks from it.</p>
         <div class="meta">25 RANKED &middot; SOURCE: SELF / YAHOO SHINE</div>
       </div>
@@ -311,7 +333,7 @@
       <div class="wcard">
         <div class="num">II</div>
         <h3>The Index</h3>
-        <div class="src">Male Model Index (MMI)</div>
+        <div class="src"><a class="srclink" href="https://malemodelindex.com" target="_blank" rel="noopener">Male Model Index (MMI) &#8599;</a></div>
         <p>The institutional archive. A 106-man registry organized into five tiers, governed by an editorial board, locked to verified commercial participation between 1970 and 2025.</p>
         <div class="meta">106 RANKED &middot; SOURCE: MALEMODELINDEX.COM</div>
       </div>
@@ -319,7 +341,7 @@
       <div class="wcard">
         <div class="num">III</div>
         <h3>The Editorial</h3>
-        <div class="src">MaleIconic</div>
+        <div class="src"><a class="srclink" href="https://maleiconic.com" target="_blank" rel="noopener">MaleIconic &#8599;</a></div>
         <p>The companion argument. Built explicitly off the Index but re-ranked on editorial judgment&mdash;a hundred names, with its own &ldquo;Mt. Rushmore&rdquo; verdict at the top.</p>
         <div class="meta">100 RANKED &middot; SOURCE: MALEICONIC.COM</div>
       </div>
@@ -327,7 +349,7 @@
       <div class="wcard">
         <div class="num">IV</div>
         <h3>By Rank</h3>
-        <div class="src">UOMO Modello</div>
+        <div class="src"><a class="srclink" href="https://thecommercialmale.com/UOMO-Modello.html" target="_blank" rel="noopener">UOMO Modello &#8599;</a></div>
         <p>A straight ordinal list of fifty, scored to one decimal place&mdash;the house ranking maintained independently of the power-ranking column beside it.</p>
         <div class="meta">50 RANKED &middot; SOURCE: THECOMMERCIALMALE.COM</div>
       </div>
@@ -335,7 +357,7 @@
       <div class="wcard">
         <div class="num">V</div>
         <h3>Power Rankings</h3>
-        <div class="src">UOMO Modello</div>
+        <div class="src"><a class="srclink" href="https://thecommercialmale.com/UOMO-Modello.html" target="_blank" rel="noopener">UOMO Modello &#8599;</a></div>
         <p>The same fifty men, sorted again&mdash;this time purely by score, independent of the by-rank column. The two UOMO lists disagree with each other almost as often as they agree.</p>
         <div class="meta">50 RANKED &middot; SOURCE: THECOMMERCIALMALE.COM</div>
       </div>
@@ -343,7 +365,7 @@
       <div class="wcard">
         <div class="num">VI</div>
         <h3>The 48</h3>
-        <div class="src">theFashionSpot &middot; 2014</div>
+        <div class="src"><a class="srclink" href="https://www.thefashionspot.com/runway-news/482165-hottest-male-models/" target="_blank" rel="noopener">theFashionSpot &middot; 2014 &#8599;</a></div>
         <p>The outlier. A slideshow gallery, not a numbered countdown&mdash;its order is treated here as a rank for comparison purposes only, with lower confidence than the other five.</p>
         <div class="meta">48 LISTED &middot; SOURCE: THEFASHIONSPOT.COM</div>
       </div>
@@ -374,12 +396,12 @@
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th class="numhead">I</th>
-            <th class="numhead">II</th>
-            <th class="numhead">III</th>
-            <th class="numhead">IV</th>
-            <th class="numhead">V</th>
-            <th class="numhead">VI</th>
+            <th class="numhead"><span class="rn">I</span><span class="abbr">L&rsquo;UOMO</span></th>
+            <th class="numhead"><span class="rn">II</span><span class="abbr">MMI</span></th>
+            <th class="numhead"><span class="rn">III</span><span class="abbr">ICONIC</span></th>
+            <th class="numhead"><span class="rn">IV</span><span class="abbr">MODELLO</span></th>
+            <th class="numhead"><span class="rn">V</span><span class="abbr">POWER</span></th>
+            <th class="numhead"><span class="rn">VI</span><span class="abbr">FSPOT</span></th>
             <th class="numhead">Cvg</th>
             <th class="numhead">Avg</th>
           </tr>
