@@ -170,6 +170,18 @@
       line-height: 1.7;
     }
 
+    .archive-seal {
+      position: absolute;
+      top: -6px;
+      right: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 780px) {
+      .archive-seal { display: none; }
+    }
+
     .eyebrow-row {
       display: flex;
       align-items: center;
@@ -444,6 +456,35 @@
 
 <header class="dossier">
   <div class="dossier-inner">
+    <svg class="archive-seal" width="152" height="170" viewBox="0 0 260 292">
+      <defs>
+        <path id="ring-top-flinn" d="M 40,130 A 90,90 0 0 1 220,130" fill="none"/>
+        <path id="ring-bottom-flinn" d="M 220,130 A 90,90 0 0 1 40,130" fill="none"/>
+      </defs>
+      <g transform="rotate(-3 130 130)">
+        <circle cx="130" cy="130" r="110" fill="none" stroke="rgba(124,31,38,0.16)" stroke-width="1"/>
+        <circle cx="130" cy="130" r="96" fill="none" stroke="rgba(124,31,38,0.16)" stroke-width="1"/>
+        <text font-family="Space Mono, monospace" font-size="10" letter-spacing="3" fill="rgba(124,31,38,0.4)">
+          <textPath href="#ring-top-flinn" startOffset="50%" text-anchor="middle">THE COMMERCIAL MALE</textPath>
+        </text>
+        <text font-family="Space Mono, monospace" font-size="10" letter-spacing="3" fill="rgba(124,31,38,0.4)">
+          <textPath href="#ring-bottom-flinn" startOffset="50%" text-anchor="middle">JUNE 2026</textPath>
+        </text>
+        <g stroke="rgba(124,31,38,0.4)" stroke-width="1">
+          <line x1="130" y1="40" x2="130" y2="48"/>
+          <line x1="130" y1="212" x2="130" y2="220"/>
+          <line x1="40" y1="130" x2="48" y2="130"/>
+          <line x1="212" y1="130" x2="220" y2="130"/>
+        </g>
+      </g>
+      <text x="130" y="112" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" letter-spacing="3" fill="rgba(124,31,38,0.4)">RANKED</text>
+      <text x="130" y="172" text-anchor="middle" font-family="Bodoni Moda, serif" font-weight="800" font-size="80" fill="rgba(124,31,38,0.55)">2</text>
+      <line x1="94" y1="182" x2="166" y2="182" stroke="rgba(124,31,38,0.4)" stroke-width="1"/>
+      <rect x="127" y="179" width="6" height="6" fill="rgba(124,31,38,0.4)" transform="rotate(45 130 182)"/>
+      <text x="130" y="197" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" letter-spacing="2" fill="rgba(124,31,38,0.4)">EDITORIAL &#183; SEAL</text>
+      <text x="130" y="262" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(124,31,38,0.4)">COMPOSITE N&#176;1 &#183; EIGHT SYSTEMS</text>
+    </svg>
+
     <div class="ledger">
       <span class="ledger-label mono">1982&ndash;1993</span>
       <span class="ledger-year">1982</span>
