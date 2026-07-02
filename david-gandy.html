@@ -194,6 +194,17 @@
       line-height: 1.7;
     }
 
+    .archive-seal {
+      position: absolute;
+      top: -6px;
+      right: 0;
+      user-select: none;
+    }
+
+    @media (max-width: 780px) {
+      .archive-seal { display: none; }
+    }
+
     .eyebrow-row {
       display: flex;
       align-items: center;
@@ -468,6 +479,16 @@
 
 <header class="dossier">
   <div class="dossier-inner">
+    <svg class="archive-seal" width="330" height="381" viewBox="0 0 260 300">
+      <text x="130" y="42" text-anchor="middle" font-family="Space Mono, monospace" font-size="14" letter-spacing="4" fill="#8f887a">RANKED</text>
+      <text x="130" y="200" text-anchor="middle" font-family="Bodoni Moda, serif" font-weight="800" font-size="150" fill="#211d17">1</text>
+      <text x="130" y="240" text-anchor="middle" font-family="Space Mono, monospace" font-size="15" letter-spacing="3" fill="#8f887a" transform="rotate(-6 130 240)">EDITORIAL</text>
+      <text x="130" y="258" text-anchor="middle" font-family="Space Mono, monospace" font-size="15" letter-spacing="3" fill="#8f887a" transform="rotate(-6 130 258)">SEAL</text>
+      <a href="https://thecommercialmale.com/Rankings.html">
+        <text x="130" y="284" text-anchor="middle" font-family="Space Mono, monospace" font-size="13" letter-spacing="3" fill="#9c2b30" text-decoration="underline">VIII</text>
+      </a>
+    </svg>
+
     <div class="ledger">
       <span class="ledger-label mono">2001&ndash;Present</span>
 
