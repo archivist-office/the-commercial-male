@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alton Mason | A Record Built From Scratch, 2016&ndash;Present | The Commercial Male</title>
+  <meta name="description" content="The first Black male model to walk a Chanel runway. Alton Mason, five consecutive Models.com Model of the Year titles — a record that has never been matched in the history of the award. The Commercial Male." />
+  <meta name="author" content="The Archivist — The Commercial Male" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Alton Mason | The Commercial Male" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thecommercialmale.com/alton-mason.html" />
+  <meta property="og:image" content="https://thecommercialmale.com/assets/img/Alton-Mason-Male-Model.jpg" />
+  <link rel="canonical" href="https://thecommercialmale.com/alton-mason.html" />
+  <link rel="icon" href="/assets/img/the-commercial-male-favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,800;1,6..96,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ground:   #f7f2e5;
+      --ground-2: #efe7d2;
+      --paper:    #211d17;
+      --oxblood:  #7c1f26;
+      --oxblood-l:#9c2b30;
+      --brass:    #a67c2e;
+      --line-d:   #ddd0ab;
+      --line-p:   #cdbf9e;
+      --muted-d:  #6b6252;
+      --muted-p:  #6d6552;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ground);
+      color: var(--paper);
+      font-family: "Newsreader", Georgia, serif;
+      line-height: 1.6;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    a { color: inherit; }
+
+    .mono {
+      font-family: "Space Mono", monospace;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      border-bottom: 1px solid var(--line-d);
+      position: sticky;
+      top: 0;
+      background: rgba(247,242,229,0.92);
+      backdrop-filter: blur(6px);
+      z-index: 50;
+    }
+
+    .nav-logo {
+      font-size: 0.62rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--paper);
+      text-decoration: none;
+      font-family: "Space Mono", monospace;
+    }
+
+    .nav-links { display: flex; gap: 24px; }
+
+    .nav-links a {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted-d);
+      text-decoration: none;
+      font-family: "Space Mono", monospace;
+    }
+
+    .nav-links a:hover { color: var(--brass); }
+
+    /* ---------- HERO / DOSSIER HEADER ---------- */
+    .dossier {
+      position: relative;
+      padding: 64px 32px 56px;
+      border-bottom: 1px solid var(--line-d);
+      overflow: hidden;
+    }
+
+    .dossier::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(171,139,72,0.05) 40px);
+      pointer-events: none;
+    }
+
+    .dossier-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 40px;
+      position: relative;
+    }
+
+    .archive-seal {
+      position: absolute;
+      top: -6px;
+      right: 0;
+      user-select: none;
+    }
+
+    @media (max-width: 780px) {
+      .archive-seal { display: none; }
+    }
+
+    /* The ledger: only one calendar year exists in the source (2016); the middle
+       tick marks the real five-title streak rather than inventing a date for it */
+    .ledger {
+      border-right: 1px solid var(--line-d);
+      padding-right: 24px;
+    }
+
+    .ledger-label {
+      font-size: 0.5rem;
+      color: var(--brass);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .ledger-year {
+      font-size: 0.62rem;
+      color: var(--muted-d);
+      font-family: "Space Mono", monospace;
+      padding: 9px 0;
+      opacity: 0;
+      animation: tickIn 0.4s ease forwards;
+    }
+
+    .ledger-year .yr-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--paper);
+    }
+
+    .ledger-year .yr-row::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--oxblood-l);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ledger-year.is-open .yr-row::before { background: var(--brass); }
+
+    .ledger-note {
+      display: block;
+      font-family: "Newsreader", serif;
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      font-size: 0.62rem;
+      color: var(--muted-d);
+      margin-top: 3px;
+      padding-left: 13px;
+    }
+
+    .ledger-connector {
+      width: 1px;
+      height: 20px;
+      background: var(--line-d);
+      margin-left: 2px;
+    }
+
+    .ledger-year:nth-child(2){animation-delay:.05s}
+    .ledger-year:nth-child(4){animation-delay:.20s}
+    .ledger-year:nth-child(6){animation-delay:.35s}
+
+    @keyframes tickIn { from { opacity:0; transform: translateX(-4px);} to {opacity:1; transform:none;} }
+
+    .ledger-tally {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line-d);
+      font-size: 0.52rem;
+      color: var(--paper);
+      line-height: 1.7;
+    }
+
+    .eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .file-stamp {
+      font-size: 0.5rem;
+      color: var(--ground);
+      background: var(--brass);
+      padding: 3px 8px;
+      letter-spacing: 0.2em;
+    }
+
+    .eyebrow-row .divider-dot { color: var(--line-d); }
+
+    .eyebrow-row .eyebrow-text {
+      font-size: 0.55rem;
+      color: var(--muted-d);
+    }
+
+    .dossier h1 {
+      font-family: "Bodoni Moda", "Times New Roman", serif;
+      font-weight: 800;
+      font-style: normal;
+      font-size: clamp(3rem, 9vw, 6.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+      margin-bottom: 18px;
+    }
+
+    .dossier .role-line {
+      font-family: "Bodoni Moda", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: var(--oxblood-l);
+      margin-bottom: 26px;
+    }
+
+    .dossier .lede {
+      max-width: 620px;
+      font-size: 1rem;
+      color: #3a352b;
+      line-height: 1.75;
+    }
+
+    .facts-strip {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 36px;
+      margin-top: 34px;
+    }
+
+    .facts-strip div h4 {
+      font-size: 0.5rem;
+      color: var(--brass);
+      margin-bottom: 6px;
+    }
+
+    .facts-strip div p {
+      font-size: 0.86rem;
+      color: var(--paper);
+    }
+
+    @media (max-width: 780px) {
+      .dossier-inner { grid-template-columns: 1fr; }
+      .ledger { border-right: none; border-bottom: 1px solid var(--line-d); padding-right:0; padding-bottom:20px; }
+      .ledger-label { width: 100%; }
+      .facts-strip { grid-template-columns: 1fr; gap: 18px; }
+    }
+
+    /* ---------- MAIN: photo rail + editorial column ---------- */
+    .record {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 72px 32px 100px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .photo-rail { position: sticky; top: 96px; }
+
+    /* Exact template pattern preserved: campaign-image div carries max-height:none, never the img */
+    .campaign-image {
+      overflow: hidden;
+      background: var(--ground-2);
+      max-height: 480px;
+      border: 1px solid var(--line-d);
+    }
+
+    .campaign-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: grayscale(0.15) contrast(1.05);
+    }
+
+    .plate-caption {
+      font-size: 0.5rem;
+      color: var(--muted-d);
+      margin: 8px 0 20px;
+      letter-spacing: 0.14em;
+    }
+
+    .tag-list {
+      margin-top: 28px;
+      border-top: 1px solid var(--line-d);
+      padding-top: 22px;
+    }
+
+    .tag-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line-d);
+    }
+
+    .tag-row h4 {
+      font-size: 0.5rem;
+      color: var(--brass);
+      flex-shrink: 0;
+      width: 110px;
+    }
+
+    .tag-row p {
+      font-size: 0.82rem;
+      color: var(--paper);
+      text-align: right;
+      font-family: "Newsreader", serif;
+    }
+
+    .accolade {
+      margin-top: 22px;
+      padding: 16px;
+      background: var(--oxblood);
+      color: var(--ground);
+    }
+
+    .accolade p {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: "Bodoni Moda", serif;
+    }
+
+    /* editorial column */
+    .editorial p.lead-para::first-letter {
+      font-family: "Bodoni Moda", serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.8;
+      padding: 6px 10px 0 0;
+      color: var(--oxblood-l);
+      font-weight: 700;
+    }
+
+    .editorial p {
+      font-size: 1.02rem;
+      color: #2f2a20;
+      margin-bottom: 26px;
+      max-width: 620px;
+    }
+
+    .pull {
+      font-family: "Bodoni Moda", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.35;
+      color: var(--paper);
+      border-left: 2px solid var(--oxblood-l);
+      padding: 4px 0 4px 24px;
+      margin: 42px 0 42px;
+      max-width: 560px;
+    }
+
+    .more-info {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: "Space Mono", monospace;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brass);
+      border: 1px solid var(--brass);
+      padding: 0.5rem 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .more-info:hover {
+      background: var(--brass);
+      color: var(--ground);
+    }
+
+    @media (max-width: 900px) {
+      .record { grid-template-columns: 1fr; }
+      .photo-rail { position: static; }
+    }
+
+    /* ---------- CLOSING STATEMENT ---------- */
+    .closing {
+      border-top: 1px solid var(--line-d);
+      padding: 80px 32px;
+      text-align: center;
+      background: var(--ground-2);
+    }
+
+    .closing p {
+      font-family: "Bodoni Moda", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--paper);
+      line-height: 1.5;
+    }
+
+    .closing .sig {
+      margin-top: 24px;
+      font-family: "Space Mono", monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted-d);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid var(--line-d);
+      padding: 32px;
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted-d);
+      font-family: "Space Mono", monospace;
+    }
+
+    footer a {
+      color: var(--muted-d);
+      text-decoration: none;
+      border-bottom: 1px solid var(--muted-d);
+      padding-bottom: 2px;
+    }
+
+    footer a:hover { color: var(--brass); border-color: var(--brass); }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">The Commercial Male</a>
+  <div class="nav-links">
+    <a href="/luomo-25.html">The Greatest 25</a>
+    <a href="https://malemodelindex.com" target="_blank" rel="noopener">Male Model Index</a>
+    <a href="/maxime-oliver.html">Maxime Oliver</a>
+  </div>
+</nav>
+
+<header class="dossier">
+  <div class="dossier-inner">
+    <svg class="archive-seal" width="330" height="381" viewBox="0 0 260 300">
+      <text x="130" y="42" text-anchor="middle" font-family="Space Mono, monospace" font-size="14" letter-spacing="4" fill="#8f887a">RANKED</text>
+      <text x="130" y="195" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="165" fill="#211d17">14</text>
+      <text x="130" y="240" text-anchor="middle" font-family="Space Mono, monospace" font-size="15" letter-spacing="3" fill="#8f887a" transform="rotate(-6 130 240)">EDITORIAL</text>
+      <text x="130" y="258" text-anchor="middle" font-family="Space Mono, monospace" font-size="15" letter-spacing="3" fill="#8f887a" transform="rotate(-6 130 258)">SEAL</text>
+      <a href="https://thecommercialmale.com/Rankings.html">
+        <text x="130" y="284" text-anchor="middle" font-family="Space Mono, monospace" font-size="13" letter-spacing="3" fill="#9c2b30" text-decoration="underline">VIII</text>
+      </a>
+    </svg>
+
+    <div class="ledger">
+      <span class="ledger-label mono">2016&ndash;Present</span>
+
+      <span class="ledger-year">
+        <span class="yr-row">2016</span>
+        <span class="ledger-note">Signs with IMG, walks Chanel as the first Black male model</span>
+      </span>
+
+      <div class="ledger-connector"></div>
+
+      <span class="ledger-year">
+        <span class="yr-row">The Streak</span>
+        <span class="ledger-note">Five consecutive Models.com Model of the Year titles</span>
+      </span>
+
+      <div class="ledger-connector"></div>
+
+      <span class="ledger-year is-open">
+        <span class="yr-row">2026</span>
+        <span class="ledger-note">Still booking campaigns and runway at the highest level</span>
+      </span>
+
+      <div class="ledger-tally mono">Five Consecutive Titles<br>A Record Built From Scratch</div>
+    </div>
+
+    <div>
+      <div class="eyebrow-row">
+        <span class="file-stamp mono">Archival Dossier</span>
+        <span class="divider-dot">&middot;</span>
+        <span class="eyebrow-text mono">The Commercial Male</span>
+      </div>
+      <h1>Alton<br>Mason</h1>
+      <p class="role-line">A Record Built From Scratch</p>
+      <p class="lede">American &middot; 2016&ndash;Present. The first Black male model to walk a Chanel runway. Five consecutive Models.com Model of the Year titles &mdash; a record that has never been matched in the history of the award.</p>
+
+      <div class="facts-strip">
+        <div>
+          <h4 class="mono">Key Campaigns</h4>
+          <p>Chanel &middot; Gucci &middot; Louis Vuitton &middot; Virgil Abloh</p>
+        </div>
+        <div>
+          <h4 class="mono">Agency</h4>
+          <p>IMG Models &middot; Elite Model Management</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="record">
+
+  <div class="photo-rail">
+    <div class="campaign-image" style="max-height:none;">
+      <img src="https://thecommercialmale.com/assets/img/Alton-Mason-Male-Model.jpg" />
+    </div>
+    <p class="plate-caption mono">Plate I</p>
+
+    <div class="campaign-image" style="max-height:none; margin-top:8px;">
+      <img src="https://thecommercialmale.com/assets/img/Alton-Mason-Supermodel.jpg" />
+    </div>
+    <p class="plate-caption mono">Plate II</p>
+
+    <div class="campaign-image" style="max-height:none; margin-top:8px;">
+      <img src="https://thecommercialmale.com/assets/img/mmi-009-alton-mason-male-model.jpg" />
+    </div>
+    <p class="plate-caption mono">Plate III</p>
+
+    <div class="tag-list">
+      <div class="tag-row">
+        <h4 class="mono">Nationality</h4>
+        <p>American</p>
+      </div>
+      <div class="tag-row">
+        <h4 class="mono">Active</h4>
+        <p>2016&ndash;Present</p>
+      </div>
+      <div class="tag-row">
+        <h4 class="mono">Agency</h4>
+        <p>IMG Models</p>
+      </div>
+    </div>
+
+    <div class="accolade">
+      <p>&ldquo;Five consecutive Models.com Model of the Year titles &mdash; a record that has never been matched in the history of the award.&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="editorial">
+    <p class="lead-para">A trained dancer before he was a model &mdash; and it shows in every frame. The first Black male model to walk a Chanel runway. Five consecutive Models.com Model of the Year titles &mdash; a record that has never been matched in the history of the award. Gucci. Louis Vuitton under Virgil Abloh. The institutional validation is complete and permanent. His presence on this list is not a gesture toward the modern era. It is a recognition that the modern era produced at least one man whose career belongs in any serious historical record of the industry at its highest level.</p>
+
+    <p class="pull">The record does not exist in the history of the award. It was built from scratch.</p>
+
+    <p>Born in Charlotte, North Carolina, Mason trained as a dancer before entering the modeling industry, and the physical literacy that training produces is visible in every photograph. He signed with IMG Models and moved rapidly to Chanel &mdash; walking the runway as the first Black male model to do so, a statement that carried institutional weight at a specific moment in the industry's social history. Louis Vuitton under Virgil Abloh extended the institutional validation into the most commercially significant luxury house in the world. Five consecutive Models.com Model of the Year titles represent a consensus across multiple years of the industry's most rigorous competitive assessment. The record does not exist in the history of the award. It was built from scratch.</p>
+
+    <p>He continues to work at the highest level of the industry, actively booking campaigns and runway appearances.</p>
+
+    <a href="https://www.instagram.com/altonmason/" target="_blank" rel="noopener" class="more-info">More Info</a>
+    <a href="https://www.amazon.com/UOMO-MODELLO-Male-Models-Time-ebook/dp/B0H735ZFT7/" target="_blank" rel="noopener" class="more-info" style="margin-left:10px;">Featured in UOMO MODELLO</a>
+  </div>
+
+</div>
+
+<div class="closing">
+  <p>A record that didn't exist before him. He built it from scratch, five years running.</p>
+  <p class="sig">The Commercial Male &middot; Editorial Record &middot; Updated June 2026</p>
+</div>
+
+<footer>
+  <div style="text-align:center;">
+    <a href="https://thecommercialmale.com">thecommercialmale.com</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/maxime-oliver.html">Maxime Oliver</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/gigi-sozzani.html">Gigi Sozzani</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/fragrance.html">The Fragrance Archive</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/campaigns.html">Global Campaigns by Male Supermodels</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/UOMO-Modello.html">UOMO Modello Top 50 Male Models Power Rankings</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/luomo-25.html">The Greatest 25</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/the-gallery.html">The Gallery</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/Rankings.html">The Consensus</a>
+    <br><br>
+    <a href="https://thecommercialmale.com/uomo-modello-greatest-25.html">UOMO Modello: The Greatest 25</a>
+  </div>
+</footer>
+
+</body>
+</html>
